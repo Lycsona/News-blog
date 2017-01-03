@@ -1,7 +1,15 @@
 import './Header.scss';
 import {Link} from 'react-router';
+import Auth from '../../services/AuthService';
 
 export default class HeaderPage extends React.Component {
+
+    logout = (e) => {
+        e.preventDefault();
+
+        Auth.logout()
+    };
+
     render() {
         return (
             <div>
@@ -9,6 +17,7 @@ export default class HeaderPage extends React.Component {
                     <div className="container-fluid">
                         <div className="navbar-header">
                             <a className="navbar-brand" href="/">Home</a>
+                            <a className="navbar-brand" href="/profile/">Profile</a>
                         </div>
                         <ul className="nav navbar-nav active navbar-right">
                             <li><Link to="/settings" onlyActiveOnIndex={true}>Settings</Link></li>

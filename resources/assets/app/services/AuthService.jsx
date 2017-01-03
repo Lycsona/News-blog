@@ -27,7 +27,7 @@ class AuthService {
             url: LOGOUT_URL,
             method: 'GET',
             crossOrigin: true,
-            type: 'json',
+            type: 'json'
         })));
     }
 

@@ -1,0 +1,27 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/Users/most/.nvm/versions/node/v0.12.17/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'build' ]
+2 info using npm@2.15.1
+3 info using node@v0.12.17
+4 verbose stack Error: missing script: build
+4 verbose stack     at run (/Users/most/.nvm/versions/node/v0.12.17/lib/node_modules/npm/lib/run-script.js:142:19)
+4 verbose stack     at /Users/most/.nvm/versions/node/v0.12.17/lib/node_modules/npm/lib/run-script.js:58:5
+4 verbose stack     at /Users/most/.nvm/versions/node/v0.12.17/lib/node_modules/npm/node_modules/read-package-json/read-json.js:345:5
+4 verbose stack     at checkBinReferences_ (/Users/most/.nvm/versions/node/v0.12.17/lib/node_modules/npm/node_modules/read-package-json/read-json.js:309:45)
+4 verbose stack     at final (/Users/most/.nvm/versions/node/v0.12.17/lib/node_modules/npm/node_modules/read-package-json/read-json.js:343:3)
+4 verbose stack     at then (/Users/most/.nvm/versions/node/v0.12.17/lib/node_modules/npm/node_modules/read-package-json/read-json.js:113:5)
+4 verbose stack     at /Users/most/.nvm/versions/node/v0.12.17/lib/node_modules/npm/node_modules/read-package-json/read-json.js:232:12
+4 verbose stack     at /Users/most/.nvm/versions/node/v0.12.17/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:78:16
+4 verbose stack     at fs.js:334:14
+4 verbose stack     at /Users/most/.nvm/versions/node/v0.12.17/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:43:10
+5 verbose cwd /Users/most/Documents/Projects/Blog/resources
+6 error Darwin 15.6.0
+7 error argv "node" "/Users/most/.nvm/versions/node/v0.12.17/bin/npm" "run" "build"
+8 error node v0.12.17
+9 error npm  v2.15.1
+10 error missing script: build
+11 error If you need help, you may report this error at:
+11 error     <https://github.com/npm/npm/issues>
+12 verbose exit [ 1, true ]

@@ -22,11 +22,11 @@ export default class RegisterPage extends React.Component {
         if (this.state.password == this.state.password_confirmation) {
             Auth.register(this.state.name, this.state.password, this.state.email, CSRF_TOKEN)
                 .catch(function (err) {
-                    alert("There's an error register in");
-                    console.log("Error register in", err);
+                    alert('There is an error register in');
+                    console.log('Error register in', err);
                 });
         } else {
-            alert("Passwords do not match.");
+            alert('Passwords do not match.');
         }
     };
 

@@ -1,3 +1,4 @@
+import Auth from '../../services/AuthService';
 import {FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
 import './login.scss';
 

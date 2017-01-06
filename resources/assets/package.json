@@ -4,6 +4,7 @@
   "description": "Blog",
   "main": "app/index.js",
   "dependencies": {
+    "alt-utils": "1.0.0",
     "babel-core": "^5.8.38",
     "babel-eslint": "^6.1.2",
     "babel-loader": "^5.4.2",
@@ -25,6 +26,7 @@
     "global": "^4.3.0",
     "history": "^4.0.1",
     "image-webpack-loader": "^1.6.2",
+    "immutable": "^3.7.6",
     "jwt-decode": "^1.1.0",
     "keymirror": "^0.1.1",
     "lodash": "^2.4.1",

@@ -10,6 +10,10 @@ export default class HeaderPage extends React.Component {
         Auth.logout()
     };
 
+    _handleMenu() {
+        var {user} = this.props;
+    }
+
     render() {
         return (
             <div>

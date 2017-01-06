@@ -1,7 +1,7 @@
 import request from 'reqwest';
 import when from 'when';
 import {LOGIN_URL, SIGNUP_URL, LOGOUT_URL} from '../constants/LoginConstants';
-import LoginActions from '../actions/LoginActions';
+import LoginActions from '../actions/Actions';
 
 
 class AuthService {
@@ -71,6 +71,11 @@ class AuthService {
                     alert('Error in logout');
                 }
             });
+    }
+
+    getUser(loginPromise) {
+
+        return 2;
     }
 }
 

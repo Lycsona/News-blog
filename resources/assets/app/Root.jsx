@@ -1,3 +1,5 @@
+import {Router, Route} from 'react-router';
+
 import HeaderPage from './components/HeaderPage';
 import ProfilePage from './components/ProfilePage';
 import RegisterPage from './components/RegistrerPage';

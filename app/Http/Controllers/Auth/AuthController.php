@@ -90,7 +90,7 @@ class AuthController extends Controller
         Auth::login($this->create($request->all()));
         return response()->json([
             'id' => Auth::user()->id,
-            'username' => Auth::user()->username
+            'username' => Auth::user()->name
         ]);
     }
     /**
@@ -120,7 +120,7 @@ class AuthController extends Controller
         if (Auth::attempt(['name' => $data['name'], 'email' => $data['email'], 'password' => $data['password']])) {
             return response()->json([
                 'id' => Auth::user()->id,
-                'username' => Auth::user()->username,
+                'username' => Auth::user()->name,
             ]);
         }
         return response()->json([

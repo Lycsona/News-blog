@@ -113,6 +113,7 @@ class AuthController extends Controller
      */
     public function postLogin(Request $request)
     {
+
         $this->validate($request, [
             $this->loginUsername() => 'required', 'password' => 'required',
         ]);
@@ -120,7 +121,7 @@ class AuthController extends Controller
         if (Auth::attempt(['name' => $data['name'], 'email' => $data['email'], 'password' => $data['password']])) {
             return response()->json([
                 'id' => Auth::user()->id,
-                'username' => Auth::user()->name,
+                'user' => Auth::user(),
             ]);
         }
         return response()->json([

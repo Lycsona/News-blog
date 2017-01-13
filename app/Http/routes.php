@@ -18,9 +18,11 @@ Route::get('/', function () {
 Route::group(['prefix' => 'api/'], function() {
     Route::group(['prefix' => 'v1'], function() {
         // Registration routes...
-        Route::post('/auth/login',  array( 'uses' => 'Auth\AuthController@postLogin'));
-        Route::post('/auth/register',  array( 'uses' => 'Auth\AuthController@postRegister'));
-        Route::get('/auth/logout',  array( 'uses' => 'Auth\AuthController@getLogout'));
+        Route::post('/auth/login', array('uses' => 'Auth\AuthController@postLogin'));
+        Route::post('/auth/register', array('uses' => 'Auth\AuthController@postRegister'));
+        Route::get('/auth/logout', array('uses' => 'Auth\AuthController@getLogout'));
+
+        Route::post('/user/{id}', array('uses' => 'User\UserController@getUser'));
     });
     // 404 not found error for any unexisting API routes
     Route::any('{all}', function() {

@@ -30,6 +30,7 @@
     "jwt-decode": "^1.1.0",
     "keymirror": "^0.1.1",
     "lodash": "^2.4.1",
+    "merge": "^1.2.0",
     "moment": "^2.10.6",
     "node-sass": "^3.10.0",
     "object-assign": "^4.1.0",

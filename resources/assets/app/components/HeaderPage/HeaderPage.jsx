@@ -1,6 +1,6 @@
 import './Header.scss';
 import {Link} from 'react-router';
-import Auth from '../../services/AuthService';
+import Auth from '../../services/UserService';
 
 export default class HeaderPage extends React.Component {
 

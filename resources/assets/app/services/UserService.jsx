@@ -1,8 +1,9 @@
 import request from 'reqwest';
 import when from 'when';
-import {LOGIN_URL, SIGNUP_URL, LOGOUT_URL} from '../constants/LoginConstants';
-import LoginActions from '../actions/Actions';
+import {LOGIN_URL, SIGNUP_URL, LOGOUT_URL, USER_URL} from '../constants/Constants';
+import Actions from '../actions/Actions';
 
+const CSRF_TOKEN = window.CSRF_TOKEN || '';
 
 class AuthService {
 
@@ -50,33 +51,52 @@ class AuthService {
 
         return loginPromise
             .then(function (response) {
-
                 if (response.error) {
                     alert(response.error.email);
-                }else{
-                    LoginActions.loginUser(response);
+                } else {
+                    Actions.loginUser(response);
                 }
             });
     }
-
 
     afterLogout(loginPromise) {
 
         return loginPromise
             .then(function (response) {
-
                 if (response.status) {
-                    LoginActions.logoutUser();
+                    Actions.logoutUser();
                 } else {
                     alert('Error in logout');
                 }
             });
     }
 
-    getUser(loginPromise) {
-
-        return 2;
+    getUser(id) {
+        this.handleUserModel(when(request({
+            url: USER_URL + id,
+            method: 'POST',
+            crossOrigin: true,
+            type: 'json',
+            data: {
+                id
+            },
+            headers: {
+                'X-CSRF-TOKEN': CSRF_TOKEN
+            }
+        })));
     }
+
+    handleUserModel(promise) {
+        return promise
+            .then(function (response) {
+                if (response.user) {
+                    Actions.userModel(response.user);
+                } else {
+                    alert('Error in getting user');
+                }
+            });
+    }
+
 }
 
 export default new AuthService()

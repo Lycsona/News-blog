@@ -1,9 +1,7 @@
 /vendor
 /public/app
 /resources/assets/node_modules/*
-Homestead.yaml
 Homestead.json
-.env
 .vagrant
 .DS_Store
 .idea

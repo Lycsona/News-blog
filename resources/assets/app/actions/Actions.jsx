@@ -1,19 +1,21 @@
 'use strict';
 
 import AppDispatcher from '../dispatcher/AppDispatcher';
-import {LOGIN_USER, LOGOUT_USER, USER_DATA } from '../constants/LoginConstants';
+import LOGIN_USER from '../constants/Constants';
+import LOGOUT_USER from '../constants/Constants';
+import USER_DATA from '../constants/Constants';
 import {Router, Route} from 'react-router';
-import AuthService from '../services/AuthService';
+import Service from '../services/UserService';
 
 export default {
 
     loginUser: (response) => {
 
         AppDispatcher.dispatch({
-            type: LOGIN_USER,
+            actionType: LOGIN_USER,
             data: {
                 id: response.id,
-                name: response.username
+                user: response.user
             },
         });
 
@@ -24,17 +26,17 @@ export default {
     logoutUser: () => {
 
         AppDispatcher.dispatch({
-            type: LOGOUT_USER
+            actionType: LOGOUT_USER
         });
         var url = '/logout';
         window.location.href = url;
     },
 
-    getUser: (id) => {
+    userModel: (response) => {
         AppDispatcher.dispatch({
-            type: USER_DATA,
+            actionType: USER_DATA,
             data: {
-                id: id
+                user: response
             },
         });
     }

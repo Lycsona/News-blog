@@ -1,36 +1,60 @@
-import UserCollectionStore from '../../stores/LoginStore';
+import UserStore from '../../stores/Store';
 import Action from '../../actions/Actions';
-import Login from '../../components/LoginPage';
-import { LOGIN_USER } from '../../constants/LoginConstants';
+import Service from '../../services/UserService';
+import {LOGIN_USER} from '../../constants/Constants';
+var {List, Map} = require('immutable');
 
-export default class ProfilePage extends React.Component {
+var ProfilePage = React.createClass({
 
-    constructor(props) {
-        super(props);
+    propTypes: {
+        user: React.PropTypes.instanceOf(Map).isRequired,
+    },
 
-        this.state = Action.getUser(props.params.id);
-        console.log(props.params);
-        console.log(this.state);
-    }
+    getInitialState() {
+        return {
+            name: null
+        }
+    },
 
-
-    shouldComponentUpdate(nextProps, nextState) {
-
-     console.log(nextProps);
-     console.log(nextState);
-    }
-
+    /**
+     * Fetch plans on mount
+     */
     componentWillMount() {
+        console.log(UserStore.getModel());
+        Service.getUser(this.props.params.id);
+        console.log(UserStore.getModel());
+    },
 
-    }
 
-    render() {
+    // // Listen for changes
+    // componentWillReceiveProps() {
+    //     UserStore.addChangeListener(this._onChange);
+    // }
+    //
+    // // Unbind change listener
+    // componentWillUnmount() {
+    //     UserStore.removeChangeListener(this._onChange);
+    // }
+    //
+    // // Update view state when change event is received
+    // _onChange() {
+    //     this.setState({
+    //         users: UserStore.getUsers()
+    //     })
+    // }
+
+    render()
+    {
 
         return (
             <div>
                 <h1 className="profile-text-align">Your profile. Welcome! </h1>
-
+                <div className="user-profile">
+                    <h1> {this.state.name} </h1>
+                </div>
             </div>
         );
     }
-}
+});
+
+module.exports = ProfilePage;

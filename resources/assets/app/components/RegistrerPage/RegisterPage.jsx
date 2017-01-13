@@ -1,4 +1,4 @@
-import Auth from '../../services/AuthService'
+import Auth from '../../services/UserService'
 import {FormControl, FormGroup, ControlLabel, Button} from 'react-bootstrap';
 import './register.scss';
 
